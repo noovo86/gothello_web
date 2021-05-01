@@ -1,0 +1,118 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Gothello説明書</title>
+    <link rel="icon" type="image/jpeg" href="./icon.jpeg">
+    <link rel="apple-touch-icon" sizes="180x180" href="sumaho.jpeg">
+
+<style>
+@font-face{ 
+    font-family: 'mplus-1p-regular';
+    src:url('http://mplus-webfonts.sourceforge.jp/mplus-1p-regular.eot');
+    /*src:url('http://mplus-webfonts.sourceforge.jp/mplus-1p-regular.eot?#iefix') format('embedded-opentype'),
+        url('http://mplus-webfonts.sourceforge.jp/mplus-1p-regular.woff') format('woff'),
+        url('http://mplus-webfonts.sourceforge.jp/mplus-1p-regular.ttf') format('truetype');
+        */
+}
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #787680;
+    border-radius: 1000px;
+}
+::-webkit-scrollbar-track {
+    border-radius: 1000px;
+    box-shadow: inset 0 0 5px #c0c0c0;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #dddddd;
+    overflow-y: auto;
+    overflow-x: hidden;
+    font-family: 'mplus-1p-regular';
+    color: #494949;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+}
+a{
+    color: #494949;
+    text-decoration: none;
+}
+#title{
+    width: 100%;
+    text-align: center;
+    font-size: 7vh;
+    margin-top: 3vh;
+    margin-bottom: 4vh;
+}
+.youso{
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    width: 80vh;
+    max-width: 90%;
+    margin-bottom: 5vh;
+}
+.youso h1{
+    font-size: 30px;
+}
+.youso p{
+    font-size: 20px;
+}
+.button{
+    position: fixed;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20vh;
+    height: 7vh;
+    max-width: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4vh;
+    border-radius: 1000px;
+    background-color: #dddddd;
+    box-shadow: -0.7vh -0.7vh 1.4vh 0.3vh #f1f1f1,
+                0.7vh 0.7vh 1.4vh 0.3vh #bbbbbb;
+}
+</style>
+</head>
+<!--<body>-->
+<body>
+    <h1 id="title">Gothello</h1>
+    <div class="youso">
+        <h1>○どんなゲーム？</h1>
+        <p>挟んだらひっくり返せる五目並べです。五目並べとオセロを合わせたようなゲームです。</p>
+    </div>
+    
+    <div class="youso">
+        <h1>○用語</h1>
+        <p>・リバース - 相手の駒を挟んでひっくり返すことです<br>
+        ・アップ - 自分の駒の上に重ねて駒を置くことでその駒をひっくり返せなくすることです<br>
+        ・ソル - アップしてひっくり返せなくなった駒のことです</p>
+    </div>
+    <div class="youso">
+        <h1>○ルール</h1>
+        <p>
+        ・先攻は白で、ルームを作成した人が先攻となります。<br>
+        ・自分の駒を5つ並べたら勝利です。<br>
+        ・駒は基本どこにでも置けます。<br>
+        ・1ターン目、後攻(黒)の置いた駒は最初からソルになります。<br>
+        ・リバースと同時に勝利することはできません。また、そうなってしまうマスに駒は置けません。<br>
+        ・駒を設置したときソルをひっくり返してしまう場合、そのマスに駒は置けません。<br>
+        <br>
+        ※注意点
+        ・ルールによって駒を置ける場所がなくなってしまい、進行できなくなる可能性があります。<br>
+        　対策用の機能が搭載されておりませんので、その場合置けなくなった人が負けです。投了してください。</p>
+    </div>
+    <br><br><br><br><br><br>
+    <a class="button" href="./">PLAY</a>
+</body>
+</html>
