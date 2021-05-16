@@ -1,132 +1,329 @@
 <html>
+
 <head>
     <meta charset="utf-8" />
     <title>Gothello</title>
-    <link rel="icon" type="image/jpeg" href="./icon.jpeg">
-    <link rel="apple-touch-icon" sizes="180x180" href="sumaho.jpeg">
-    
+    <link rel="icon" type="image/jpeg" href="./icons/icon.jpeg">
+    <link rel="apple-touch-icon" sizes="180x180" href="./icons/sumaho.jpeg">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="./main.css">
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
 </head>
 <!--<body>-->
+
 <body>
     <div id="select">
         <div class="outer">
             <div class="mid">
                 <div class="inner">
-                    <div class="button off" onclick="offline()"><p class="num">オフラインで対面対戦</p></div>
-                    <div class="button" id="nlo" onclick="new_loom()"><p class="num">新しいルームを作成</p></div>
+                    <div class="button off" onclick="offline()">
+                        <p class="num">オフラインで対面対戦</p>
+                    </div>
+                    <div class="button" id="nlo" onclick="new_loom()">
+                        <p class="num">新しいルームを作成</p>
+                    </div>
                     <div id="looms">
-                        <div class="button" onclick=""><p class="num">loading...</p></div>
+                        <div class="button" onclick="">
+                            <p class="num">loading...</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <a id="helpb" href="http://noovo.php.xdomain.jp/gothello/help.html"><p>?</p></a>
+        <a id="helpb" href="http://noovo.php.xdomain.jp/gothello/help.html">
+            <p>?</p>
+        </a>
     </div>
-    <div id="loading"><div class="guruguru"><div class="dot-flashing"></div></div></div>
-    <div id="waiting"><p id="waitaa">相手の行動を待っています</p></div>
+    <div id="loading">
+        <div class="guruguru">
+            <div class="dot-flashing"></div>
+        </div>
+    </div>
+    <div id="waiting">
+        <p id="waitaa">相手の行動を待っています</p>
+    </div>
     <div id="bokasi"></div>
     <h1>Gothello</h1>
     <p id="lnum"></p>
-    <div id="touryo" onclick="touryo()"><p>✕</p></div>
-    <div class="banmen">
-        <div id="k11" class="koma" onclick="koma_click(this)"><div id="s11" class="sol"></div></div>
-        <div id="k12" class="koma" onclick="koma_click(this)"><div id="s12" class="sol"></div></div>
-        <div id="k13" class="koma" onclick="koma_click(this)"><div id="s13" class="sol"></div></div>
-        <div id="k14" class="koma" onclick="koma_click(this)"><div id="s14" class="sol"></div></div>
-        <div id="k15" class="koma" onclick="koma_click(this)"><div id="s15" class="sol"></div></div>
-        <div id="k16" class="koma" onclick="koma_click(this)"><div id="s16" class="sol"></div></div>
-        <div id="k17" class="koma" onclick="koma_click(this)"><div id="s17" class="sol"></div></div>
-        <div id="k18" class="koma" onclick="koma_click(this)"><div id="s18" class="sol"></div></div>
-        <div id="k19" class="koma" onclick="koma_click(this)"><div id="s19" class="sol"></div></div>
-        <div id="k21" class="koma" onclick="koma_click(this)"><div id="s21" class="sol"></div></div>
-        <div id="k22" class="koma" onclick="koma_click(this)"><div id="s22" class="sol"></div></div>
-        <div id="k23" class="koma" onclick="koma_click(this)"><div id="s23" class="sol"></div></div>
-        <div id="k24" class="koma" onclick="koma_click(this)"><div id="s24" class="sol"></div></div>
-        <div id="k25" class="koma" onclick="koma_click(this)"><div id="s25" class="sol"></div></div>
-        <div id="k26" class="koma" onclick="koma_click(this)"><div id="s26" class="sol"></div></div>
-        <div id="k27" class="koma" onclick="koma_click(this)"><div id="s27" class="sol"></div></div>
-        <div id="k28" class="koma" onclick="koma_click(this)"><div id="s28" class="sol"></div></div>
-        <div id="k29" class="koma" onclick="koma_click(this)"><div id="s29" class="sol"></div></div>
-        <div id="k31" class="koma" onclick="koma_click(this)"><div id="s31" class="sol"></div></div>
-        <div id="k32" class="koma" onclick="koma_click(this)"><div id="s32" class="sol"></div></div>
-        <div id="k33" class="koma" onclick="koma_click(this)"><div id="s33" class="sol"></div></div>
-        <div id="k34" class="koma" onclick="koma_click(this)"><div id="s34" class="sol"></div></div>
-        <div id="k35" class="koma" onclick="koma_click(this)"><div id="s35" class="sol"></div></div>
-        <div id="k36" class="koma" onclick="koma_click(this)"><div id="s36" class="sol"></div></div>
-        <div id="k37" class="koma" onclick="koma_click(this)"><div id="s37" class="sol"></div></div>
-        <div id="k38" class="koma" onclick="koma_click(this)"><div id="s38" class="sol"></div></div>
-        <div id="k39" class="koma" onclick="koma_click(this)"><div id="s39" class="sol"></div></div>
-        <div id="k41" class="koma" onclick="koma_click(this)"><div id="s41" class="sol"></div></div>
-        <div id="k42" class="koma" onclick="koma_click(this)"><div id="s42" class="sol"></div></div>
-        <div id="k43" class="koma" onclick="koma_click(this)"><div id="s43" class="sol"></div></div>
-        <div id="k44" class="koma" onclick="koma_click(this)"><div id="s44" class="sol"></div></div>
-        <div id="k45" class="koma" onclick="koma_click(this)"><div id="s45" class="sol"></div></div>
-        <div id="k46" class="koma" onclick="koma_click(this)"><div id="s46" class="sol"></div></div>
-        <div id="k47" class="koma" onclick="koma_click(this)"><div id="s47" class="sol"></div></div>
-        <div id="k48" class="koma" onclick="koma_click(this)"><div id="s48" class="sol"></div></div>
-        <div id="k49" class="koma" onclick="koma_click(this)"><div id="s49" class="sol"></div></div>
-        <div id="k51" class="koma" onclick="koma_click(this)"><div id="s51" class="sol"></div></div>
-        <div id="k52" class="koma" onclick="koma_click(this)"><div id="s52" class="sol"></div></div>
-        <div id="k53" class="koma" onclick="koma_click(this)"><div id="s53" class="sol"></div></div>
-        <div id="k54" class="koma" onclick="koma_click(this)"><div id="s54" class="sol"></div></div>
-        <div id="k55" class="koma" onclick="koma_click(this)"><div id="s55" class="sol"></div></div>
-        <div id="k56" class="koma" onclick="koma_click(this)"><div id="s56" class="sol"></div></div>
-        <div id="k57" class="koma" onclick="koma_click(this)"><div id="s57" class="sol"></div></div>
-        <div id="k58" class="koma" onclick="koma_click(this)"><div id="s58" class="sol"></div></div>
-        <div id="k59" class="koma" onclick="koma_click(this)"><div id="s59" class="sol"></div></div>
-        <div id="k61" class="koma" onclick="koma_click(this)"><div id="s61" class="sol"></div></div>
-        <div id="k62" class="koma" onclick="koma_click(this)"><div id="s62" class="sol"></div></div>
-        <div id="k63" class="koma" onclick="koma_click(this)"><div id="s63" class="sol"></div></div>
-        <div id="k64" class="koma" onclick="koma_click(this)"><div id="s64" class="sol"></div></div>
-        <div id="k65" class="koma" onclick="koma_click(this)"><div id="s65" class="sol"></div></div>
-        <div id="k66" class="koma" onclick="koma_click(this)"><div id="s66" class="sol"></div></div>
-        <div id="k67" class="koma" onclick="koma_click(this)"><div id="s67" class="sol"></div></div>
-        <div id="k68" class="koma" onclick="koma_click(this)"><div id="s68" class="sol"></div></div>
-        <div id="k69" class="koma" onclick="koma_click(this)"><div id="s69" class="sol"></div></div>
-        <div id="k71" class="koma" onclick="koma_click(this)"><div id="s71" class="sol"></div></div>
-        <div id="k72" class="koma" onclick="koma_click(this)"><div id="s72" class="sol"></div></div>
-        <div id="k73" class="koma" onclick="koma_click(this)"><div id="s73" class="sol"></div></div>
-        <div id="k74" class="koma" onclick="koma_click(this)"><div id="s74" class="sol"></div></div>
-        <div id="k75" class="koma" onclick="koma_click(this)"><div id="s75" class="sol"></div></div>
-        <div id="k76" class="koma" onclick="koma_click(this)"><div id="s76" class="sol"></div></div>
-        <div id="k77" class="koma" onclick="koma_click(this)"><div id="s77" class="sol"></div></div>
-        <div id="k78" class="koma" onclick="koma_click(this)"><div id="s78" class="sol"></div></div>
-        <div id="k79" class="koma" onclick="koma_click(this)"><div id="s79" class="sol"></div></div>
-        <div id="k81" class="koma" onclick="koma_click(this)"><div id="s81" class="sol"></div></div>
-        <div id="k82" class="koma" onclick="koma_click(this)"><div id="s82" class="sol"></div></div>
-        <div id="k83" class="koma" onclick="koma_click(this)"><div id="s83" class="sol"></div></div>
-        <div id="k84" class="koma" onclick="koma_click(this)"><div id="s84" class="sol"></div></div>
-        <div id="k85" class="koma" onclick="koma_click(this)"><div id="s85" class="sol"></div></div>
-        <div id="k86" class="koma" onclick="koma_click(this)"><div id="s86" class="sol"></div></div>
-        <div id="k87" class="koma" onclick="koma_click(this)"><div id="s87" class="sol"></div></div>
-        <div id="k88" class="koma" onclick="koma_click(this)"><div id="s88" class="sol"></div></div>
-        <div id="k89" class="koma" onclick="koma_click(this)"><div id="s89" class="sol"></div></div>
-        <div id="k91" class="koma" onclick="koma_click(this)"><div id="s91" class="sol"></div></div>
-        <div id="k92" class="koma" onclick="koma_click(this)"><div id="s92" class="sol"></div></div>
-        <div id="k93" class="koma" onclick="koma_click(this)"><div id="s93" class="sol"></div></div>
-        <div id="k94" class="koma" onclick="koma_click(this)"><div id="s94" class="sol"></div></div>
-        <div id="k95" class="koma" onclick="koma_click(this)"><div id="s95" class="sol"></div></div>
-        <div id="k96" class="koma" onclick="koma_click(this)"><div id="s96" class="sol"></div></div>
-        <div id="k97" class="koma" onclick="koma_click(this)"><div id="s97" class="sol"></div></div>
-        <div id="k98" class="koma" onclick="koma_click(this)"><div id="s98" class="sol"></div></div>
-        <div id="k99" class="koma" onclick="koma_click(this)"><div id="s99" class="sol"></div></div>
-
-        <div class="bar_y"></div><div class="bar_y b2"></div><div class="bar_y b3"></div><div class="bar_y b4"></div><div class="bar_y b5"></div><div class="bar_y b6"></div><div class="bar_y b7"></div><div class="bar_y b8"></div>
-        <div class="bar_x"></div><div class="bar_x b2"></div><div class="bar_x b3"></div><div class="bar_x b4"></div><div class="bar_x b5"></div><div class="bar_x b6"></div><div class="bar_x b7"></div><div class="bar_x b8"></div>
+    <div id="touryo" onclick="touryo()">
+        <p>✕</p>
     </div>
-    
+    <div class="banmen">
+        <div id="k11" class="koma" onclick="koma_click(this)">
+            <div id="s11" class="sol"></div>
+        </div>
+        <div id="k12" class="koma" onclick="koma_click(this)">
+            <div id="s12" class="sol"></div>
+        </div>
+        <div id="k13" class="koma" onclick="koma_click(this)">
+            <div id="s13" class="sol"></div>
+        </div>
+        <div id="k14" class="koma" onclick="koma_click(this)">
+            <div id="s14" class="sol"></div>
+        </div>
+        <div id="k15" class="koma" onclick="koma_click(this)">
+            <div id="s15" class="sol"></div>
+        </div>
+        <div id="k16" class="koma" onclick="koma_click(this)">
+            <div id="s16" class="sol"></div>
+        </div>
+        <div id="k17" class="koma" onclick="koma_click(this)">
+            <div id="s17" class="sol"></div>
+        </div>
+        <div id="k18" class="koma" onclick="koma_click(this)">
+            <div id="s18" class="sol"></div>
+        </div>
+        <div id="k19" class="koma" onclick="koma_click(this)">
+            <div id="s19" class="sol"></div>
+        </div>
+        <div id="k21" class="koma" onclick="koma_click(this)">
+            <div id="s21" class="sol"></div>
+        </div>
+        <div id="k22" class="koma" onclick="koma_click(this)">
+            <div id="s22" class="sol"></div>
+        </div>
+        <div id="k23" class="koma" onclick="koma_click(this)">
+            <div id="s23" class="sol"></div>
+        </div>
+        <div id="k24" class="koma" onclick="koma_click(this)">
+            <div id="s24" class="sol"></div>
+        </div>
+        <div id="k25" class="koma" onclick="koma_click(this)">
+            <div id="s25" class="sol"></div>
+        </div>
+        <div id="k26" class="koma" onclick="koma_click(this)">
+            <div id="s26" class="sol"></div>
+        </div>
+        <div id="k27" class="koma" onclick="koma_click(this)">
+            <div id="s27" class="sol"></div>
+        </div>
+        <div id="k28" class="koma" onclick="koma_click(this)">
+            <div id="s28" class="sol"></div>
+        </div>
+        <div id="k29" class="koma" onclick="koma_click(this)">
+            <div id="s29" class="sol"></div>
+        </div>
+        <div id="k31" class="koma" onclick="koma_click(this)">
+            <div id="s31" class="sol"></div>
+        </div>
+        <div id="k32" class="koma" onclick="koma_click(this)">
+            <div id="s32" class="sol"></div>
+        </div>
+        <div id="k33" class="koma" onclick="koma_click(this)">
+            <div id="s33" class="sol"></div>
+        </div>
+        <div id="k34" class="koma" onclick="koma_click(this)">
+            <div id="s34" class="sol"></div>
+        </div>
+        <div id="k35" class="koma" onclick="koma_click(this)">
+            <div id="s35" class="sol"></div>
+        </div>
+        <div id="k36" class="koma" onclick="koma_click(this)">
+            <div id="s36" class="sol"></div>
+        </div>
+        <div id="k37" class="koma" onclick="koma_click(this)">
+            <div id="s37" class="sol"></div>
+        </div>
+        <div id="k38" class="koma" onclick="koma_click(this)">
+            <div id="s38" class="sol"></div>
+        </div>
+        <div id="k39" class="koma" onclick="koma_click(this)">
+            <div id="s39" class="sol"></div>
+        </div>
+        <div id="k41" class="koma" onclick="koma_click(this)">
+            <div id="s41" class="sol"></div>
+        </div>
+        <div id="k42" class="koma" onclick="koma_click(this)">
+            <div id="s42" class="sol"></div>
+        </div>
+        <div id="k43" class="koma" onclick="koma_click(this)">
+            <div id="s43" class="sol"></div>
+        </div>
+        <div id="k44" class="koma" onclick="koma_click(this)">
+            <div id="s44" class="sol"></div>
+        </div>
+        <div id="k45" class="koma" onclick="koma_click(this)">
+            <div id="s45" class="sol"></div>
+        </div>
+        <div id="k46" class="koma" onclick="koma_click(this)">
+            <div id="s46" class="sol"></div>
+        </div>
+        <div id="k47" class="koma" onclick="koma_click(this)">
+            <div id="s47" class="sol"></div>
+        </div>
+        <div id="k48" class="koma" onclick="koma_click(this)">
+            <div id="s48" class="sol"></div>
+        </div>
+        <div id="k49" class="koma" onclick="koma_click(this)">
+            <div id="s49" class="sol"></div>
+        </div>
+        <div id="k51" class="koma" onclick="koma_click(this)">
+            <div id="s51" class="sol"></div>
+        </div>
+        <div id="k52" class="koma" onclick="koma_click(this)">
+            <div id="s52" class="sol"></div>
+        </div>
+        <div id="k53" class="koma" onclick="koma_click(this)">
+            <div id="s53" class="sol"></div>
+        </div>
+        <div id="k54" class="koma" onclick="koma_click(this)">
+            <div id="s54" class="sol"></div>
+        </div>
+        <div id="k55" class="koma" onclick="koma_click(this)">
+            <div id="s55" class="sol"></div>
+        </div>
+        <div id="k56" class="koma" onclick="koma_click(this)">
+            <div id="s56" class="sol"></div>
+        </div>
+        <div id="k57" class="koma" onclick="koma_click(this)">
+            <div id="s57" class="sol"></div>
+        </div>
+        <div id="k58" class="koma" onclick="koma_click(this)">
+            <div id="s58" class="sol"></div>
+        </div>
+        <div id="k59" class="koma" onclick="koma_click(this)">
+            <div id="s59" class="sol"></div>
+        </div>
+        <div id="k61" class="koma" onclick="koma_click(this)">
+            <div id="s61" class="sol"></div>
+        </div>
+        <div id="k62" class="koma" onclick="koma_click(this)">
+            <div id="s62" class="sol"></div>
+        </div>
+        <div id="k63" class="koma" onclick="koma_click(this)">
+            <div id="s63" class="sol"></div>
+        </div>
+        <div id="k64" class="koma" onclick="koma_click(this)">
+            <div id="s64" class="sol"></div>
+        </div>
+        <div id="k65" class="koma" onclick="koma_click(this)">
+            <div id="s65" class="sol"></div>
+        </div>
+        <div id="k66" class="koma" onclick="koma_click(this)">
+            <div id="s66" class="sol"></div>
+        </div>
+        <div id="k67" class="koma" onclick="koma_click(this)">
+            <div id="s67" class="sol"></div>
+        </div>
+        <div id="k68" class="koma" onclick="koma_click(this)">
+            <div id="s68" class="sol"></div>
+        </div>
+        <div id="k69" class="koma" onclick="koma_click(this)">
+            <div id="s69" class="sol"></div>
+        </div>
+        <div id="k71" class="koma" onclick="koma_click(this)">
+            <div id="s71" class="sol"></div>
+        </div>
+        <div id="k72" class="koma" onclick="koma_click(this)">
+            <div id="s72" class="sol"></div>
+        </div>
+        <div id="k73" class="koma" onclick="koma_click(this)">
+            <div id="s73" class="sol"></div>
+        </div>
+        <div id="k74" class="koma" onclick="koma_click(this)">
+            <div id="s74" class="sol"></div>
+        </div>
+        <div id="k75" class="koma" onclick="koma_click(this)">
+            <div id="s75" class="sol"></div>
+        </div>
+        <div id="k76" class="koma" onclick="koma_click(this)">
+            <div id="s76" class="sol"></div>
+        </div>
+        <div id="k77" class="koma" onclick="koma_click(this)">
+            <div id="s77" class="sol"></div>
+        </div>
+        <div id="k78" class="koma" onclick="koma_click(this)">
+            <div id="s78" class="sol"></div>
+        </div>
+        <div id="k79" class="koma" onclick="koma_click(this)">
+            <div id="s79" class="sol"></div>
+        </div>
+        <div id="k81" class="koma" onclick="koma_click(this)">
+            <div id="s81" class="sol"></div>
+        </div>
+        <div id="k82" class="koma" onclick="koma_click(this)">
+            <div id="s82" class="sol"></div>
+        </div>
+        <div id="k83" class="koma" onclick="koma_click(this)">
+            <div id="s83" class="sol"></div>
+        </div>
+        <div id="k84" class="koma" onclick="koma_click(this)">
+            <div id="s84" class="sol"></div>
+        </div>
+        <div id="k85" class="koma" onclick="koma_click(this)">
+            <div id="s85" class="sol"></div>
+        </div>
+        <div id="k86" class="koma" onclick="koma_click(this)">
+            <div id="s86" class="sol"></div>
+        </div>
+        <div id="k87" class="koma" onclick="koma_click(this)">
+            <div id="s87" class="sol"></div>
+        </div>
+        <div id="k88" class="koma" onclick="koma_click(this)">
+            <div id="s88" class="sol"></div>
+        </div>
+        <div id="k89" class="koma" onclick="koma_click(this)">
+            <div id="s89" class="sol"></div>
+        </div>
+        <div id="k91" class="koma" onclick="koma_click(this)">
+            <div id="s91" class="sol"></div>
+        </div>
+        <div id="k92" class="koma" onclick="koma_click(this)">
+            <div id="s92" class="sol"></div>
+        </div>
+        <div id="k93" class="koma" onclick="koma_click(this)">
+            <div id="s93" class="sol"></div>
+        </div>
+        <div id="k94" class="koma" onclick="koma_click(this)">
+            <div id="s94" class="sol"></div>
+        </div>
+        <div id="k95" class="koma" onclick="koma_click(this)">
+            <div id="s95" class="sol"></div>
+        </div>
+        <div id="k96" class="koma" onclick="koma_click(this)">
+            <div id="s96" class="sol"></div>
+        </div>
+        <div id="k97" class="koma" onclick="koma_click(this)">
+            <div id="s97" class="sol"></div>
+        </div>
+        <div id="k98" class="koma" onclick="koma_click(this)">
+            <div id="s98" class="sol"></div>
+        </div>
+        <div id="k99" class="koma" onclick="koma_click(this)">
+            <div id="s99" class="sol"></div>
+        </div>
+
+        <div class="bar_y"></div>
+        <div class="bar_y b2"></div>
+        <div class="bar_y b3"></div>
+        <div class="bar_y b4"></div>
+        <div class="bar_y b5"></div>
+        <div class="bar_y b6"></div>
+        <div class="bar_y b7"></div>
+        <div class="bar_y b8"></div>
+        <div class="bar_x"></div>
+        <div class="bar_x b2"></div>
+        <div class="bar_x b3"></div>
+        <div class="bar_x b4"></div>
+        <div class="bar_x b5"></div>
+        <div class="bar_x b6"></div>
+        <div class="bar_x b7"></div>
+        <div class="bar_x b8"></div>
+    </div>
+
     <div id="kekka">
         <h1 id="kati">Win</h1>
         <h1 id="make">Lose</h1>
         <h1 id="offver">Result</h1>
         <p id="kshousai">変なことしないで下さい。私の作ったレールに沿って歩けばいいんですよ。</p>
-        <div id="tugihe" onclick="restart()"><p>>></p></div>
+        <div id="tugihe" onclick="restart()">
+            <p>>></p>
+        </div>
     </div>
 
-    <script src="./gothello.js"></script>
-    <script src="./loom.js"></script>
+    <script src="./js/gothello.js"></script>
+    <script src="./js/loom.js"></script>
 </body>
+
 </html>

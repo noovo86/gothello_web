@@ -1,0 +1,85 @@
+@font-face {
+    font-family: 'mplus-1p-regular';
+    src: url('http://mplus-webfonts.sourceforge.jp/mplus-1p-regular.eot');
+    /*src:url('http://mplus-webfonts.sourceforge.jp/mplus-1p-regular.eot?#iefix') format('embedded-opentype'),
+url('http://mplus-webfonts.sourceforge.jp/mplus-1p-regular.woff') format('woff'),
+url('http://mplus-webfonts.sourceforge.jp/mplus-1p-regular.ttf') format('truetype');
+*/
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #787680;
+    border-radius: 1000px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 1000px;
+    box-shadow: inset 0 0 5px #c0c0c0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #dddddd;
+    overflow-y: auto;
+    overflow-x: hidden;
+    font-family: 'mplus-1p-regular';
+    color: #494949;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+}
+
+a {
+    color: #494949;
+    text-decoration: none;
+}
+
+#title {
+    width: 100%;
+    text-align: center;
+    font-size: 7vh;
+    margin-top: 3vh;
+    margin-bottom: 4vh;
+}
+
+.youso {
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    width: 80vh;
+    max-width: 90%;
+    margin-bottom: 5vh;
+}
+
+.youso h1 {
+    font-size: 30px;
+}
+
+.youso p {
+    font-size: 20px;
+}
+
+.button {
+    position: fixed;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20vh;
+    height: 7vh;
+    max-width: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4vh;
+    border-radius: 1000px;
+    background-color: #dddddd;
+    box-shadow: -0.7vh -0.7vh 1.4vh 0.3vh #f1f1f1, 0.7vh 0.7vh 1.4vh 0.3vh #bbbbbb;
+}
