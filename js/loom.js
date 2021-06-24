@@ -71,10 +71,25 @@ function new_loom() {
         //document.getElementById("bokasi").style.display = "none" ;
         document.getElementById("select").style.display = "none";
         document.getElementById("waiting").style.display = "block";
+        document.getElementById("cancel").style.display = "block";
         document.getElementById("lnum").textContent = `ID:${loomid}`
         document.getElementById("waitaa").textContent = "対戦相手を待っています"
         console.log(`${loomid}を作成しました`);
         startwm();
+    }).fail();
+};
+function cancel() {
+    stopwm();
+    $.ajax({
+        type: "GET",
+        url: "./api_php/sakujo.php",
+        crossDomain: false,
+        dataType: "json",
+        data: {
+            loid: loomid,
+        },
+    }).done(function(data) {
+        window.location.reload();
     }).fail();
 };
 
@@ -146,6 +161,7 @@ function startwm() {
                 document.getElementById("bokasi").style.display = "none";
                 document.getElementById("select").style.display = "none";
                 document.getElementById("waiting").style.display = "none";
+                document.getElementById("cancel").style.display = "none";
                 document.getElementById("waitaa").textContent = "相手の行動を待っています"
                 console.log("相手が入室しました")
                 stopwm();
