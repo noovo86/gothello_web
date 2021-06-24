@@ -80,6 +80,7 @@ function new_loom() {
 };
 function cancel() {
     stopwm();
+    document.getElementById("cancel").style.display = "none";
     $.ajax({
         type: "GET",
         url: "./api_php/sakujo.php",
